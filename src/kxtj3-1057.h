@@ -21,6 +21,8 @@ Distributed as-is; no warranty is given.
 #include "WProgram.h"
 #endif
 
+#include <IMUConfig.h>
+
 // Print variable name
 #define getName(var) #var
 
@@ -62,8 +64,8 @@ class KXTJ3
   Sample Rate - 0.781, 1.563, 3.125, 6.25, 12.5, 25, 50, 100, 200, 400, 800,
   1600Hz Output Data Rates ≥400Hz will force device into High Resolution mode
   */
-  kxtj3_status_t begin(float sampleRate, uint8_t accRange,
-                       bool highResSet = false, bool debugSet = false);
+  kxtj3_status_t begin(float sampleRate = SAMPLE_RATE, uint8_t accRange = ACCEL_RANGE,
+                       bool highResSet = HIGH_RES, bool debugSet = false);
 
   // Enables 14-bit operation mode for Accelerometer range 8g/16g
   kxtj3_status_t enable14Bit(uint8_t accRange);
@@ -184,5 +186,7 @@ class KXTJ3
 
 // * Note that to properly change the value of this register, the PC1 bit in
 // CTRL_REG1 must first be set to “0”.
+
+extern KXTJ3 IMU;
 
 #endif // End of __KXTJ3_IMU_H__ definition check

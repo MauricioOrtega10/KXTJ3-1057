@@ -923,3 +923,5 @@ kxtj3_status_t KXTJ3::resetInterrupt(void)
 
   return returnError;
 }
+
+KXTJ3 IMU(IMU_I2C_ADDRESS);
