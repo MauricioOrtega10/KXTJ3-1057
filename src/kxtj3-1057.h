@@ -187,6 +187,6 @@ class KXTJ3
 // * Note that to properly change the value of this register, the PC1 bit in
 // CTRL_REG1 must first be set to “0”.
 
-extern KXTJ3 IMU;
+extern KXTJ3 imu;
 
 #endif // End of __KXTJ3_IMU_H__ definition check
